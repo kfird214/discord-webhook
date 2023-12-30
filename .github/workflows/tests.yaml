@@ -8,17 +8,17 @@ on:
         type: string
         required: false
 
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
-  pull_request:
-    branches:
-      - main
+  # pull_request:
+  #   branches:
+  #     - main
 
 env:
   offline_log: offline.start.log
-  INPUT_WEBHOOK-URL: ${{ inputs.webhook-url && secrets.WEBHOOK-URL || '' }}
+  INPUT_WEBHOOK-URL: ${{ inputs.webhook-url }}
 
 jobs:
   test:
