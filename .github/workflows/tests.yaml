@@ -2,6 +2,11 @@ name: 🧪 Tests
 
 on:
   workflow_dispatch:
+    inputs:
+      webhook-url:
+        description: "Webhook URL"
+        type: string
+        required: false
 
   push:
     branches:
@@ -13,6 +18,7 @@ on:
 
 env:
   offline_log: offline.start.log
+  INPUT_WEBHOOK-URL: ${{ inputs.webhook-url && secrets.WEBHOOK-URL || '' }}
 
 jobs:
   test:
