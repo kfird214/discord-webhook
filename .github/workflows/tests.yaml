@@ -35,10 +35,8 @@ jobs:
 
         # https://chmodcommand.com/chmod-766/
       - name: Chmod reports
-        run: |
-          ls -l reports
-          chmod --changes --recursive a+rwx,g-x,o-x reports
-          ls -l reports
+        if: success() || failure()
+        run: chmod --changes --recursive a+rwx,g-x,o-x reports
 
       - name: Test Report local
         uses: dorny/test-reporter@v1
