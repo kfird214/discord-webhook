@@ -1,8 +1,10 @@
 {
+  "author": "nisan",
   "name": "discord-webhook",
   "version": "1.0.0",
   "description": "",
   "main": "lib/webhook.js",
+  "license": "ISC",
   "scripts": {
     "build": "tsc",
     "test": "jest",
@@ -19,8 +21,6 @@
     "classNameTemplate": "{classname}",
     "titleTemplate": "{title}"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.10.1",
     "discord.js": "^14.14.1"

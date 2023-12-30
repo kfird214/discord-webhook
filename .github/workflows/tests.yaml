@@ -8,16 +8,7 @@ on:
         type: string
         required: false
 
-  # push:
-  #   branches:
-  #     - main
-
-  # pull_request:
-  #   branches:
-  #     - main
-
 env:
-  offline_log: offline.start.log
   INPUT_WEBHOOK-URL: ${{ inputs.webhook-url }}
 
 jobs:
@@ -30,8 +21,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: "npm"
+          node-version-file: .nvmrc
+          cache: npm
 
       - name: Install dependencies
         timeout-minutes: 5
@@ -40,11 +31,6 @@ jobs:
       - name: Run tests
         timeout-minutes: 5
         run: "npm run test:ci"
-
-      - name: Show Serverless Offline Logs
-        if: success() || failure()
-        continue-on-error: true
-        run: cat $offline_log
 
       - name: Test Report local
         uses: dorny/test-reporter@v1
