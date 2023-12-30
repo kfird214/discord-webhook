@@ -32,9 +32,12 @@ jobs:
         timeout-minutes: 5
         run: "npm run test:ci"
 
-      - name: Chmod reports
         # https://chmodcommand.com/chmod-766/
-        run: chmod --changes --recursive a+rwx,g-x,o-x reports
+      - name: Chmod reports
+        run: |
+          ls -l reports
+          chmod --changes --recursive a+rwx,g-x,o-x reports
+          ls -l reports
 
       - name: Test Report local
         uses: dorny/test-reporter@v1
