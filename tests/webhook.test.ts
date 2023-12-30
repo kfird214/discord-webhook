@@ -8,7 +8,8 @@ function input_name(name: string) {
 
 function set_input(name: string, value: any) {
     if (typeof value !== 'string') {
-        value = value.toString();
+        if (!!value)
+            value = value.toString();
     }
 
     if (inputs.EMBED_KEYS.includes(name)) {
