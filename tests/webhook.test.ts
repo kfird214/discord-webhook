@@ -57,7 +57,7 @@ test('Embed', async () => {
     set_input(inputs.EMBED_TITLE, "Embed Title");
     set_input(inputs.EMBED_DESCRIPTION, "Embed Description\n\nLine 4\n\nLine 6.");
     set_input(inputs.EMBED_TIMESTAMP, new Date().toISOString());
-    set_input(inputs.EMBED_COLOR, "0x33b4ff");
+    set_input(inputs.EMBED_COLOR, 0x3b4ff);
     set_input(inputs.EMBED_AUTHOR_NAME, "Embed Name");
     set_input(inputs.EMBED_URL, "https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png");
     set_input(inputs.EMBED_AUTHOR_ICON_URL, "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png");
