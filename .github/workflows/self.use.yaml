@@ -35,7 +35,7 @@ jobs:
           embed-author-icon-url: ${{ github.event.sender.avatar_url }}
 
           embed-description: |
-            [${{ github.workflow }} \#${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            [${{ github.workflow }} ##${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
             [${{ env.GIT_COMMIT_SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/${{ github.sha }})
 
