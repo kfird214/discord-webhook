@@ -16,8 +16,15 @@
       "script": "test",
       "group": "test",
       "problemMatcher": [
-        "$tsc",
-      ],
+        "$tsc"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "generate:inputs",
+      "problemMatcher": [],
+      "label": "npm: generate:inputs",
+      "detail": "ts-node ./scripts/inputs-generator.js"
     }
   ]
 }

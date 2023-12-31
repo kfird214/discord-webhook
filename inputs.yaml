@@ -1,0 +1,124 @@
+webhook-url:
+  description: 'Webhook URL from discord. See: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks for details'
+  type: string
+  required: true
+
+content:
+  description: 'Message that is sent via the webhook.'
+  type: string
+  required: false
+
+thread-id:
+  description: 'ID of the thread you want the webhook to send the message into (will automatically unarchive threads)'
+  type: string
+  required: false
+
+thread-name:
+  description: 'Name of the thread you want the webhook to create'
+  type: string
+  required: false
+
+flags:
+  description: 'Message flags'
+  type: string
+  required: false
+
+username:
+  description: 'The username that should appear to send the message. Note: username will have the "bot" badge next to their name.'
+  type: string
+  required: false
+
+avatar-url:
+  description: 'URL for the avatar that should appear with the message.'
+  type: string
+  required: false
+
+tts:
+  description: 'Boolean to indicate whether the webhook is text-to-speech'
+  type: boolean
+  required: false
+
+raw-data:
+  description: 'Name of a json file that will be sent as the data for the webhook'
+  type: json-file
+  required: false
+
+raw-string:
+  description: 'Content of json string that will be sent as the data for the webhook'
+  type: json
+  required: false
+
+filename:
+  description: 'Name of a file that will be uploaded via the webhook'
+  type: stream
+  required: false
+
+embed-title:
+  description: 'Embed title'
+  type: string
+  required: false
+
+embed-url:
+  description: 'Embed URL'
+  type: url
+  required: false
+
+embed-description:
+  description: 'Embed description'
+  type: string
+  required: false
+
+embed-timestamp:
+  description: 'Embed timestamp (ISO8601 format)'
+  type: timestamp
+  required: false
+
+embed-color:
+  description: 'Embed color'
+  type: Color
+  required: false
+
+embed-footer-text:
+  description: 'Embed footer text'
+  type: string
+  required: false
+
+embed-footer-icon-url:
+  description: 'Embed footer icon url'
+  type: url
+  required: false
+
+embed-image-url:
+  description: 'Embed image url'
+  type: url
+  required: false
+
+embed-thumbnail-url:
+  description: 'Embed thumbnail url'
+  type: url
+  required: false
+
+embed-author-name:
+  description: 'Embed author name'
+  type: string
+  required: false
+
+embed-author-url:
+  description: 'Embed author url'
+  type: url
+  required: false
+
+embed-author-icon-url:
+  description: 'Embed author icon'
+  type: url
+  required: false
+
+embed-fields: 
+  required: false
+  # type: inline-fields # multiline string
+  type: string
+  description: |
+    Embed fields (custom format)
+      - inline field 1
+      inline field 2
+      . none inline field 3

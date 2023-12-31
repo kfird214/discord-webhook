@@ -6,11 +6,13 @@
   "main": "lib/webhook.js",
   "license": "ISC",
   "scripts": {
+    "generate:inputs": "ts-node ./scripts/inputs-generator.js",
     "build": "tsc",
     "test": "jest",
-    "test:ci": "jest --ci --reporters=default --reporters=jest-junit",
+    "test:reports": "jest --ci --reporters=default --reporters=jest-junit",
+    "test:ci": "npm run generate:inputs && npm run test:reports",
     "package": "ncc build --source-map",
-    "package:all": "npm run build && npm run package"
+    "package:all": "npm run generate:inputs && npm run build && npm run package"
   },
   "jest-junit": {
     "outputDirectory": "reports",
@@ -33,6 +35,7 @@
     "jest-junit": "^16.0.0",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "yaml": "^2.3.4"
   }
 }
