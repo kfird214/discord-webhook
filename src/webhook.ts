@@ -98,7 +98,7 @@ function parseMapFromParameters(
     return parameterMap
 }
 
-export async function executeWebhook(): Promise<void> {
+export async function executeWebhook() {
     let webhookUrl = core.getInput(inputs.WEBHOOK_URL)
     const filename = core.getInput(inputs.FILENAME)
     const threadId = core.getInput(inputs.THREAD_ID)
@@ -111,13 +111,13 @@ export async function executeWebhook(): Promise<void> {
     }
 
     const whc = new WebhookClient({ url: webhookUrl });
-    await whc.send(payload);
+    return await whc.send(payload);
 }
 
 async function main(): Promise<void> {
     try {
         core.info('Running discord webhook action...')
-        return await executeWebhook()
+        await executeWebhook()
     } catch (error) {
         if (error instanceof Error) core.setFailed(error.message)
     }
