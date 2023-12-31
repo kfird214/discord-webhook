@@ -17,6 +17,10 @@ jobs:
       - name: Expose git commit data
         uses: rlespinasse/git-commit-data-action@v1
 
+      - name: Timestamp
+        id: timestamp
+        run: echo "timestamp=$(date -u +\"%Y-%m-%dT%H:%M:%SZ\")" >> "$GITHUB_OUTPUT"
+
       - name: Self Invoke
         uses: ./
         with:
@@ -44,3 +48,4 @@ jobs:
 
           embed-footer-text: ${{ github.actor }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
           embed-footer-icon-url: https://emojiapi.dev/api/v1/bullseye/128.png
+          embed-timestamp: ${{ steps.timestamp.outputs.timestamp }}
