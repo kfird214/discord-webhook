@@ -37,8 +37,8 @@ jobs:
           embed-thumbnail-url: https://emojiapi.dev/api/v1/rocket/256.png
 
           embed-author-name: ${{ github.actor.name }}
-          embed-author-url: ${{ github.event.sender.avatar_url }}
-          embed-author-icon-url: ${{ github.actor.avatar_url }}
+          # embed-author-url: ${{ env.GIT_COMMIT_COMMITTER_EMAIL }}
+          embed-author-icon-url: ${{ github.event.sender.avatar_url }}
 
           embed-description: |
             [${{ env.GIT_COMMIT_SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})
