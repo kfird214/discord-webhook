@@ -30,7 +30,7 @@ jobs:
           username: Github CI
           avatar-url: https://github.githubassets.com/images/modules/logos_page/Octocat.png
 
-          embed-color: 0x33b4ff
+          embed-color: '#33b4ff'
           embed-title: "${{ github.workflow }} #${{ github.run_number }}"
           embed-url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           embed-image-url: https://emojiapi.dev/api/v1/framed_picture/512.png
