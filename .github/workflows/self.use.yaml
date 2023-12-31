@@ -21,8 +21,7 @@ jobs:
           username: ${{ github.event.workflow_dispatch.event }}
           avatar-url: ${{ github.event.workflow_dispatch.actor.avatar_url }}
 
-          embed-color: blue
-          # embed-color: 0x33b4ff
+          embed-color: 0x33b4ff
           embed-title: Self Invoke [commit#${{ github.sha }}](${{ github.server_url }}/${{ github.repository }}/${{ github.event.workflow_dispatch.head_sha }})
           embed-author-name: ${{ github.event.workflow_dispatch.actor.name }}
           embed-author-icon-url: ${{ github.event.workflow_dispatch.actor.avatar_url }}
