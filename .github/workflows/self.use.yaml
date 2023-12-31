@@ -47,6 +47,12 @@ jobs:
             
             ${{ env.GIT_COMMIT_MESSAGE_BODY }}
 
+          embed-fields: |
+            - field 1=inlined
+            - field 2=inlined
+            filed 3=not inlined
+            . filed 4= forced not inlined
+
           embed-footer-text: ${{ github.actor }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
           embed-footer-icon-url: https://emojiapi.dev/api/v1/bullseye/128.png
           embed-timestamp: ${{ steps.timestamp.outputs.timestamp }}

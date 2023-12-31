@@ -108,7 +108,7 @@ export function get_webhook_payload(): WebhookMessageCreateOptions {
         non inline field 2
     */
 
-    const FIELD_KEY_VALUE_SEPERATOR = "|";
+    const FIELD_KEY_VALUE_SEPERATOR = "=";
     const fields_str = get_input(inputs.EMBED_FIELDS) as string;
     if (fields_str) {
         const fields_arr = fields_str.split('\n').filter(x => x.length > 0);

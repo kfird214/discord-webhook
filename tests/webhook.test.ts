@@ -63,6 +63,8 @@ test('Embed', async () => {
     set_input(inputs.EMBED_AUTHOR_ICON_URL, "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png");
     set_input(inputs.EMBED_FOOTER_TEXT, "Embed Text");
 
+    set_input(inputs.EMBED_FIELDS, "- field 1=inlined\n- field 2=inlined\nfiled 3=not inlined\n. filed 4= forced not inlined")
+
     try {
         await executeWebhook();
     }
