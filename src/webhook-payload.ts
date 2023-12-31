@@ -126,7 +126,7 @@ export function get_webhook_payload(): WebhookMessageCreateOptions {
                 value: clip_text(value.trim(), 1024),
                 inline
             } as APIEmbedField;
-        });
+        }).filter(x => x.name.length > 0 && x.value.length > 0);
 
         eb().addFields(fields);
     }
