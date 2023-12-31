@@ -1,7 +1,7 @@
 {
   "author": "nisan",
   "name": "discord-webhook",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": "lib/webhook.js",
   "license": "ISC",
