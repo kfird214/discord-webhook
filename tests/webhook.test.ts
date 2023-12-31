@@ -84,7 +84,7 @@ test('Embed', async () => {
     set_input(inputs.AVATAR_URL, "https://github.githubassets.com/images/modules/logos_page/Octocat.png");
 
     set_input(inputs.TITLE, "Embed Title");
-    set_input(inputs.DESCRIPTION, "Embed Description");
+    set_input(inputs.DESCRIPTION, "Embed Description\n\nLine 4\n\nLine 6.");
     set_input(inputs.TIMESTAMP, new Date().toISOString());
     set_input(inputs.COLOR, parseInt("0x33b4ff", 16));
     set_input(inputs.NAME, "Embed Name");
