@@ -2,6 +2,7 @@
     "recommendations": [
         "mikestead.dotenv",
         "github.vscode-github-actions",
-        "orta.vscode-jest"
+        "orta.vscode-jest",
+        "firsttris.vscode-jest-runner"
     ]
 }

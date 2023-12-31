@@ -38,11 +38,9 @@ jobs:
           embed-description: |
             [${{ env.GIT_COMMIT_SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/${{ github.sha }})
 
-            **${{ env.GIT_COMMIT_MESSAGE_SUBJECT }}**
+            > **${{ env.GIT_COMMIT_MESSAGE_SUBJECT }}**
 
-            ---
-
-            ${{ env.GIT_COMMIT_MESSAGE_BODY }}
+            > ${{ env.GIT_COMMIT_MESSAGE_BODY }}
 
           embed-footer-text: ${{ github.actor }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
           embed-footer-icon-url: https://emojiapi.dev/api/v1/bullseye/128.png
