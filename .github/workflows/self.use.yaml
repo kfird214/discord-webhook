@@ -26,13 +26,13 @@ jobs:
           avatar-url: https://github.githubassets.com/images/modules/logos_page/Octocat.png
 
           embed-color: 0x33b4ff
-          embed-title: "${{ github.workflow }} #${{ github.run_number }} (${{ github.actor }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>)"
+          embed-title: "${{ github.workflow }} #${{ github.run_number }}"
           embed-url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           embed-image-url: https://emojiapi.dev/api/v1/framed_picture/512.png
           embed-thumbnail-url: https://emojiapi.dev/api/v1/rocket/256.png
 
           embed-author-name: ${{ github.actor.name }}
-          embed-author-url: ${{ github.actor.avatar_url }}
+          embed-author-url: ${{ github.event.sender.avatar_url }}
           embed-author-icon-url: ${{ github.actor.avatar_url }}
 
           embed-description: |
@@ -44,5 +44,5 @@ jobs:
 
             ${{ env.GIT_COMMIT_MESSAGE_BODY }}
 
-          embed-footer-text: Job id `${{ github.job }}`
+          embed-footer-text: ${{ github.actor }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>
           embed-footer-icon-url: https://emojiapi.dev/api/v1/bullseye/128.png
