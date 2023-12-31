@@ -28,8 +28,12 @@ async function main(): Promise<void> {
         await executeWebhook()
     } catch (error) {
         if (error instanceof Error) { 
-            core.error(error)
+            core.info(error.stack ?? "NO STACK")
             core.setFailed(error.message)
+            core.error(error)
+        }
+        else {
+            core.setFailed("Unknown error")
         }
     }
 }
