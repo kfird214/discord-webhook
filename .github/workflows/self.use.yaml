@@ -1,0 +1,28 @@
+name: Self Invoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      webhook:
+        description: 'Webhook URL'
+        type: string
+        required: true
+
+jobs:
+  self_invoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Self Invoke
+        uses: ./
+        with:
+          webhook-url: ${{ inputs.webhook }}
+          username: ${{ github.event.workflow_dispatch.event }}
+          avatar-url: ${{ github.event.workflow_dispatch.actor.avatar_url }}
+
+          embed-color: blue
+          # embed-color: 0x33b4ff
+          embed-title: Self Invoke [commit#${{ github.sha }}](${{ github.server_url }}/${{ github.repository }}/${{ github.event.workflow_dispatch.head_sha }})
+          embed-author-name: ${{ github.event.workflow_dispatch.actor.name }}
+          embed-author-icon-url: ${{ github.event.workflow_dispatch.actor.avatar_url }}
+          embed-description: "[${{ github.event.workflow_dispatch.name }}](${{ github.event.workflow_dispatch.html_url }}) Self Invoke"
+          embed-footer-text: Job id \`${{ github.job }}\`
