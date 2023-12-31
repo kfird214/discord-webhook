@@ -1,6 +1,7 @@
 import { expect, test } from '@jest/globals';
 import { executeWebhook } from '../src/webhook';
 import * as inputs from '../src/inputs';
+import { fail } from 'assert';
 
 function input_name(name: string) {
     return `INPUT_${name.replace(/ /g, '_').toUpperCase()}`
@@ -57,6 +58,13 @@ test('fails with missing URL', async () => {
     await expect(executeWebhook()).rejects.toThrow('The provided webhook URL is not valid.');
     set_input(inputs.WEBHOOK_URL, old_val);
 })
+
+test("Webhook URL get returns any json response", async () => {
+    const webhook_url = process.env[input_name(inputs.WEBHOOK_URL)];
+    expect(webhook_url).toBeDefined();
+    const response = await fetch(webhook_url as string);
+    expect(response).toBeDefined();
+});
 
 test('Simple Send', async () => {
     set_input(inputs.CONTENT, `Test Simple Send \`${new Date().toISOString()}\``);
