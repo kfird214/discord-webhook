@@ -19,7 +19,8 @@ jobs:
 
       - name: Timestamp
         id: timestamp
-        run: echo "timestamp=$(node -e \"process.stdout.write(new Date().toISOString())\")" >> "$GITHUB_OUTPUT"
+        # run: echo "timestamp=$(node -e \"process.stdout.write(new Date().toISOString())\")" >> "$GITHUB_OUTPUT"
+        run: echo "timestamp=$(date -u +\"%Y-%m-%dT%H:%M:%S.000Z\")" >> "$GITHUB_OUTPUT"
 
       - name: Self Invoke
         uses: ./
