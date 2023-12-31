@@ -27,15 +27,14 @@ async function main(): Promise<void> {
         core.info('Running discord webhook action...')
         await executeWebhook()
     } catch (error) {
-        // if (error instanceof Error) { 
-            // core.info(error.stack ?? "NO STACK")
-            // core.setFailed(error.message)
-            // core.error(error)
-        // }
-        // else {
-            // core.setFailed("Unknown error")
-        // }
-        core.setFailed("Unknown error")
+        if (error instanceof Error) { 
+            core.info(error.stack ?? "NO STACK")
+            core.setFailed(error.message)
+            core.error(error)
+        }
+        else {
+            core.setFailed("Unknown error")
+        }
     }
 }
 
