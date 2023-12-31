@@ -18,12 +18,12 @@ jobs:
         uses: ./
         with:
           webhook-url: ${{ inputs.webhook }}
-          username: ${{ github.event.workflow_dispatch.event }}
-          avatar-url: ${{ github.event.workflow_dispatch.actor.avatar_url }}
+          username: ${{ github.event.sender.name }}
+          avatar-url: ${{ github.event.sender.avatar_url }}
 
           embed-color: 0x33b4ff
-          embed-title: Self Invoke [commit#${{ github.sha }}](${{ github.server_url }}/${{ github.repository }}/${{ github.event.workflow_dispatch.head_sha }})
-          embed-author-name: ${{ github.event.workflow_dispatch.actor.name }}
-          embed-author-icon-url: ${{ github.event.workflow_dispatch.actor.avatar_url }}
-          embed-description: "[${{ github.event.workflow_dispatch.name }}](${{ github.event.workflow_dispatch.html_url }}) Self Invoke"
+          embed-title: Self Invoke [commit#${{ github.sha }}](${{ github.server_url }}/${{ github.repository }}/${{ github.sha }}) run by ${{ github.actor }} ${{ github.event.sender.name }} <${{ github.event.sender.email }}>
+          embed-author-name: ${{ github.actor.name }}
+          embed-author-icon-url: ${{ github.event.sender.avatar_url }}
+          embed-description: "[${{ github.workflow }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
           embed-footer-text: Job id \`${{ github.job }}\`
