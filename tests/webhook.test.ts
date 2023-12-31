@@ -1,7 +1,6 @@
 import { expect, test } from '@jest/globals';
 import { executeWebhook } from '../src/webhook';
 import * as inputs from '../src/inputs';
-import { fail } from 'assert';
 
 function input_name(name: string) {
     return `INPUT_${name.replace(/ /g, '_').toUpperCase()}`
