@@ -25,7 +25,7 @@ jobs:
           avatar-url: ${{ github.event.sender.avatar_url }}
 
           embed-color: 0x33b4ff
-          embed-title: Self invoke (${{ github.actor }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>)
+          embed-title: "${{ github.workflow }} #${{ github.run_number }} (${{ github.actor }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}>)"
           embed-url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           embed-image-url: https://emojiapi.dev/api/v1/framed_picture.svg
           embed-thumbnail-url: https://emojiapi.dev/api/v1/rocket.svg
@@ -35,8 +35,6 @@ jobs:
           embed-author-icon-url: ${{ github.event.sender.avatar_url }}
 
           embed-description: |
-            [${{ github.workflow }} ##${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-
             [${{ env.GIT_COMMIT_SHORT_SHA }}](${{ github.server_url }}/${{ github.repository }}/${{ github.sha }})
 
             > ${{ env.GIT_COMMIT_MESSAGE_SUBJECT }}"
