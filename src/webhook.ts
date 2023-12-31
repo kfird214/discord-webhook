@@ -27,7 +27,10 @@ async function main(): Promise<void> {
         core.info('Running discord webhook action...')
         await executeWebhook()
     } catch (error) {
-        if (error instanceof Error) core.setFailed(error.message)
+        if (error instanceof Error) { 
+            console.error(error)
+            core.setFailed(error.message)
+        }
     }
 }
 
