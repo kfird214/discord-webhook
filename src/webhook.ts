@@ -28,7 +28,7 @@ async function main(): Promise<void> {
         await executeWebhook()
     } catch (error) {
         if (error instanceof Error) { 
-            console.error(error)
+            core.error(error)
             core.setFailed(error.message)
         }
     }
